@@ -1,3 +1,22 @@
+<div align="center" style="background: #fff3cd; border: 2px solid #ffc107; border-radius: 8px; padding: 20px; margin: 20px 0;">
+
+# ⚠️ REPOSITORY MOVED NOTICE
+
+## This repository has been migrated to a new organization
+
+### 🎯 **New Location: [Code-n-Cloud/EbaySharp](https://github.com/Code-n-Cloud/EbaySharp)**
+
+**Important Information:**
+- 🚀 **All future development** continues in the new repository
+- 🐛 **Issues and bug reports** should be submitted to the new repository  
+- 🔄 **Pull requests** will only be accepted in the new repository
+- 📚 **Documentation** is updated in the new repository
+
+**Update your git remote:**
+```pwsh
+git remote set-url origin https://github.com/Code-n-Cloud/EbaySharp.git
+```
+
 # EbaySharp: A .NET wrapper library for eBay REST API.
 
 [![NuGet](https://img.shields.io/nuget/v/CMS365.EbaySharp.svg?logo=nuget)](https://www.nuget.org/packages/CMS365.EbaySharp/)
