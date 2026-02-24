@@ -122,6 +122,7 @@
                             internal struct METHODS
                             {
                                 internal const string GET_RETURN_POLICIES = "/{0}/get_return_policies";
+                                internal const string GET_ITEM_CONDITION_POLICIES = "/{0}/get_item_condition_policies?filter=categoryIds:{{{1}}}";
                             }
                         }
                     }
@@ -131,6 +132,7 @@
                     internal struct IDENTITY
                     {
                         internal const string GET_USER = "/commerce/identity/v1/user/";
+                        internal const string GET_PRIVILEGES = "/sell/account/v1/privilege";
                     }
                 }
             }

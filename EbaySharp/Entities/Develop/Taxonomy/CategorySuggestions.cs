@@ -8,5 +8,6 @@ namespace EbaySharp.Entities.Develop.Taxonomy
         public string CategoryTreeVersion { get; set; }
         [JsonPropertyName("categorySuggestions")]
         public CategorySuggestion[] CategorySuggestionList { get; set; }
+
     }
 }

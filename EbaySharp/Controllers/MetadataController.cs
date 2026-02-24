@@ -15,5 +15,18 @@ namespace EbaySharp.Controllers
             string requestUrl = $"{Constants.API_SERVER_URL}{Constants.DEVELOP.SELLING_APPS.ENDPOINT_URL}{Constants.DEVELOP.SELLING_APPS.LISTING_METADATA.METADATA.ENDPOINT_URL}{Constants.DEVELOP.SELLING_APPS.LISTING_METADATA.METADATA.MARKETPLACE.ENDPOINT_URL}{string.Format(Constants.DEVELOP.SELLING_APPS.LISTING_METADATA.METADATA.MARKETPLACE.METHODS.GET_RETURN_POLICIES, marketplaceName)}";
             return await new RequestExecuter().ExecuteGetRequest<ReturnPolicies>(requestUrl, $"Bearer {accessToken}");
         }
+
+        public async Task<IReadOnlyList<ItemCondition>> GetAllowedConditionsForCategory(string marketplaceName, string categoryId)
+        {
+            string requestUrl =
+                $"{Constants.API_SERVER_URL}" +
+                $"{Constants.DEVELOP.SELLING_APPS.ENDPOINT_URL}" +
+                $"{Constants.DEVELOP.SELLING_APPS.LISTING_METADATA.METADATA.ENDPOINT_URL}" +
+                $"{Constants.DEVELOP.SELLING_APPS.LISTING_METADATA.METADATA.MARKETPLACE.ENDPOINT_URL}" +
+                $"{string.Format(Constants.DEVELOP.SELLING_APPS.LISTING_METADATA.METADATA.MARKETPLACE.METHODS.GET_ITEM_CONDITION_POLICIES, marketplaceName, categoryId)}";
+
+            var response = await new RequestExecuter().ExecuteGetRequest<ItemConditionsResponse>(requestUrl, $"Bearer {accessToken}");
+            return response?.ItemConditionPolicies?.FirstOrDefault()?.ItemConditions ?? new List<ItemCondition>();
+        }
     }
 }

@@ -19,6 +19,12 @@ namespace EbaySharp.Controllers
             return await new RequestExecuter().ExecuteGetRequest<User>(requestUrl, $"Bearer {accessToken}");
         }
 
+        public async Task<string> GetUserName()
+        {
+            string requestUrl = $"{Constants.API_SERVER_URL}{Constants.DEVELOP.SELLING_APPS.OTHERS.IDENTITY.GET_PRIVILEGES}";
+            return await new RequestExecuter().ExecuteGetRequest<string>(requestUrl, $"Bearer {accessToken}");
+        }
+
         #endregion
 
     }

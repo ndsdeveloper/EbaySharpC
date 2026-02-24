@@ -335,6 +335,11 @@ namespace EbaySharp.Controllers
             return await new MetadataController(accessToken).GetReturnPolicies(MarketplaceId);
         }
 
+        public async Task<IReadOnlyList<ItemCondition>> GetAllowedConditionsForCategory(string marketplaceName, string categoryId)
+        {
+            return await new MetadataController(accessToken).GetAllowedConditionsForCategory(marketplaceName, categoryId);
+        }
+
         #endregion
 
         #region TAXONOMY 
@@ -364,6 +369,11 @@ namespace EbaySharp.Controllers
         {
             return await new IdentityController(accessToken).GetUser();
         }
+
+        //public async Task<User> GetUserName()
+        //{
+        //    return await new IdentityController(accessToken).GetUserName();
+        //}
 
         #endregion
 
